@@ -1,4 +1,6 @@
-
+<?php
+    include_once 'header.php';
+?>
 
         <div class="nav">
             <div class="nav__content">
