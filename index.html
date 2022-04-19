@@ -341,7 +341,37 @@
       </div>
     </section><!-- End Services Section -->
 
-  
+        <!-- ======= Portfolio Section ======= -->
+        <section id="portfolio" class="portfolio">
+          <div class="container">
+    
+            <div class="section-title" data-aos="zoom-out">
+              <h2>Portfolio</h2>
+              <p>What we've done</p>
+            </div>
+    
+            <ul id="portfolio-flters" class="d-flex justify-content-end" data-aos="fade-up">
+              <li data-filter="*" class="filter-active">All</li>
+              <li data-filter=".filter-app">App</li>
+              <li data-filter=".filter-web">Web</li>
+            </ul>
+    
+            <div class="row portfolio-container" data-aos="fade-up">
+    
+              <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+                <div class="portfolio-img"><img src="assets/img/portfolio/portfolio2.PNG" class="img-fluid" alt=""></div>
+                <div class="portfolio-info">
+                  <h4>San Andreas State Police | Sunstone RP</h4>
+                  <p>Web</p>
+                  <a href="assets/img/portfolio/portfolio2.PNG" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Web 3"><i class="bx bx-plus"></i></a>
+                  <a href="portfolio/sasp.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+                </div>
+              </div>
+    
+            </div>
+    
+          </div>
+        </section><!-- End Portfolio Section -->
 
     <!-- ======= Testimonials Section ======= -->
     <section id="testimonials" class="testimonials">
@@ -423,38 +453,32 @@
 
           <div class="col-lg-3 col-md-6 mt-4 mt-md-0">
             <div class="box featured" data-aos="zoom-in" data-aos-delay="100">
-              <h3>Business Package</h3>
-              <h4><sup>From £</sup>25<span></span></h4>
+              <h3>Brochure Website</h3>
+              <h4><sup>From £</sup>50 - <sup>£</sup>100</h4>
               <ul>
-                <li>Logo for your company (If Needed)</li>
-                <li>Support and help you get set up</li>
-                <li>Front End website</li>
-                <li>Possibilities for you to get a custom domain</li>
+                <li>I will make you a website that shows off your company!</li>
+                <li>You will also have the ability to use ecommerce</li>
               </ul>
             </div>
           </div>
 
           <div class="col-lg-3 col-md-6 mt-4 mt-lg-0">
             <div class="box" data-aos="zoom-in" data-aos-delay="200">
-              <h3>Developer</h3>
-              <h4><sup>From £</sup>35</h4>
+              <h3>Prototpe</h3>
+              <h4><sup>From £</sup>80 - <sup>£</sup>600+</h4>
               <ul>
-                <li>Custom Software</li>
-                <li>Support from the developers</li>
-                <li>Quick turn around times</li>
+                <li>I can help design a prototype for your new idea!</li>
               </ul>
             </div>
           </div>
 
           <div class="col-lg-3 col-md-6 mt-4 mt-lg-0">
             <div class="box" data-aos="zoom-in" data-aos-delay="300">
-              <span class="advanced">Advanced</span>
-              <h3>Ultimate</h3>
-              <h4><sup>From £</sup>50<span></span></h4>
+              <span class="advanced">Best Deal</span>
+              <h3>Proof of Concept</h3>
+              <h4><sup>From £</sup>100 - <sup>£</sup>2000+</h4>
               <ul>
-                <li>Mix & Match</li>
-                <li>Anything you need</li>
-                <li>Support from developers</li>
+                <li>I can build a working proof of concept that will make your brand or business stand out!</li>
               </ul>
             </div>
           </div>
@@ -528,7 +552,50 @@
 
           </div>
 
+          <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+          <script type="text/javascript">
+              (function() {
+                  // https://dashboard.emailjs.com/admin/account
+                  emailjs.init('L7_5A9w6f9OR2qFM-');
+              })();
+          </script>
+          <script type="text/javascript">
+              window.onload = function() {
+                  document.getElementById('contact-form').addEventListener('submit', function(event) {
+                      event.preventDefault();
+                      // generate a five digit number for the contact_number variable
+                      this.contact_number.value = Math.random() * 100000 | 0;
+                      // these IDs from the previous steps
+                      emailjs.sendForm('service_w3nzqxa', 'template_e672ho1', this)
+                          .then(function() {
+                              console.log('SUCCESS!');
+                          }, function(error) {
+                              console.log('FAILED...', error);
+                          });
+                      document.getElementById('clear_message').value = '';
+                      document.getElementById('clear_email').value = '';
+                      document.getElementById('clear_name').value = '';
+                  });
+              }
+          </script>
+          <div class="col-lg-8 mt-5 mt-lg-0" data-aos="fade-left">
+            <form id="contact-form" class="php-email-form">
+              <div class="row">
+                <div class="col-md-6 form-group">
+                  <input type="hidden" name="contact_number">
+                  <input  id="clear_name" class="form-control" name="user_name" placeholder="Your Name" type="text" required>
+                </div>
+                <div class="col-md-6 form-group mt-3 mt-md-0">
+                  <input id="clear_email" type="email" class="form-control" name="user_email" placeholder="Your Email" required>
+                </div>
+              </div>
+              <div class="form-group mt-3">
+                <textarea id="clear_message" class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
+              </div>
+              <div class="text-center"><button type="submit" >Send Message</button></div>
+            </form>
 
+          </div>
       </div>
     </section><!-- End Contact Section -->
 
